@@ -4,6 +4,10 @@ import router from './router';
 import store from './store';
 import './registerServiceWorker';
 
+require('dotenv').config();
+
+console.log(process.env);
+
 Vue.config.productionTip = false;
 
 new Vue({

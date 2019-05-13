@@ -17,12 +17,12 @@
               <div class="col-6"><img src="../assets/volant.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
             </div>
             <div class="row">
-              <div class="col-6"><img src="../assets/moteur.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
-              <div class="col-6"><img src="../assets/moteur.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
+              <div class="col-6"><img src="../assets/Seat.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
+              <div class="col-6"><img src="../assets/carburant.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
             </div>
             <div class="row">
-              <div class="col-6"><img src="../assets/moteur.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
-              <div class="col-6"><img src="../assets/moteur.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
+              <div class="col-6"><img src="../assets/Localisation.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
+              <div class="col-6"><img src="../assets/Coeur.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
             </div>
           </div>
         </div>
@@ -32,42 +32,42 @@
 </template>
 
 <script>
-  // @ is an alias to /src
-  // import HelloWorld from '@/components/HelloWorld.vue';
-  //
-  // export default {
-  //   name: 'home',
-  //   components: {
-  //     HelloWorld,
-  //   },
-  // };
-  export default {
-    data() {
-      return {
-        users: [
-          {
-            Nom: 'Carter',
-            Marque: 'Smart',
-            type: 'Break',
-            couleur: 'green',
-            espace_utile: 15,
-            kilometrage: 173016,
-            carburant: 'Diesel',
-            puissance: 106,
-          },
-          {
-            Nom: 'Blair',
-            Marque: 'Ferrari',
-            type: 'Break',
-            couleur: 'indigo',
-            espace_utile: 9,
-            kilometrage: 98113,
-            carburant: 'GPL',
-            puissance: 196,
-          },
-        ],
-      };
-    },
-  };
+// @ is an alias to /src
+// import HelloWorld from '@/components/HelloWorld.vue';
+//
+// export default {
+//   name: 'home',
+//   components: {
+//     HelloWorld,
+//   },
+// };
+export default {
+  data() {
+    return {
+      users: [
+        {
+          Nom: 'Carter',
+          Marque: 'Smart',
+          type: 'Break',
+          couleur: 'green',
+          espace_utile: 15,
+          kilometrage: 173016,
+          carburant: 'Diesel',
+          puissance: 106,
+        },
+        {
+          Nom: 'Blair',
+          Marque: 'Ferrari',
+          type: 'Break',
+          couleur: 'indigo',
+          espace_utile: 9,
+          kilometrage: 98113,
+          carburant: 'GPL',
+          puissance: 196,
+        },
+      ],
+    };
+  },
+};
 
 </script>

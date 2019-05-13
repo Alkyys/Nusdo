@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Nusdo</a>
+    <router-link class="navbar-brand" to="/">Nusdo</router-link>
     <button class="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -29,8 +29,14 @@
           <router-link class="nav-link" to="/about">Link 3</router-link>
         </li>
       </ul>
-
-      <ul class="nav justify-content-end">
+      <button
+        type="button"
+        class="btn btn-primary btn-sm"
+        data-toggle="modal"
+        data-target="#ModalConnection">
+        Me connecter
+      </button>
+      <ul class="nav">
         <li class="nav-item text-left">
           <div class="font-weight-bold">John Doe</div>
           <router-link class="text-left" to="/about">Voir mon profil</router-link>
@@ -40,13 +46,14 @@
         </li>
       </ul>
     </div>
+
   </nav>
 </template>
 
 <script>
-  export default {
-    name: 'header',
-  };
+export default {
+  name: 'header',
+};
 </script>
 
 <style scoped>

@@ -9,11 +9,21 @@
           <div class="col-4">
             <h5 class="card-title">{{users[0].Nom}} est a Louer !</h5>
             <p class="card-text">Puissance: {{users[0].puissance}}ch</p>
-            <p class="card-text">Diponible: Yes</p>
+            <p class="card-text">Prix: {{users[0].espace_utile}}</p>
           </div>
           <div class="col-5">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolorem eius ex non officiis omnis quam
-              quidem totam. Amet ea minima nemo perspiciatis quasi quia repellendus sed veniam. In, iusto.</p>
+            <div class="row">
+              <div class="col-6"><img src="../assets/moteur.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
+              <div class="col-6"><img src="../assets/volant.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
+            </div>
+            <div class="row">
+              <div class="col-6"><img src="../assets/moteur.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
+              <div class="col-6"><img src="../assets/moteur.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
+            </div>
+            <div class="row">
+              <div class="col-6"><img src="../assets/moteur.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
+              <div class="col-6"><img src="../assets/moteur.svg" alt="puissance" width="50px"><p>{{users[0].puissance}}ch</p></div>
+            </div>
           </div>
         </div>
       </div>

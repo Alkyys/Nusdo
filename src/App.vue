@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
+  <div>
     <navBar/>
-    <router-view/>
+    <div class="container">
+      <router-view/>
+    </div>
   </div>
 </template>
 

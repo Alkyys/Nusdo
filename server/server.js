@@ -2,7 +2,11 @@ import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 
-import routes from './routes';
+//import de Route
+const routeCars = require('./routes/routeCars');
+const routeLeasing = require('./routes/routeLeasing');
+const routeUser = require('./routes/routeUser');
+
 import models from './models';
 
 const app = express();
@@ -11,8 +15,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/user', routes.user);
-app.use('/messages', routes.message);
+app.use('/car', routeCars );
+app.use('/leasing', routeLeasing );
+app.use('/user', routeUser );
+
 
 // route de bases test CRUD
 app.get('/user', (req, res) => {

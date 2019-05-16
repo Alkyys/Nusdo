@@ -11,7 +11,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/session', routes.session);
 app.use('/user', routes.user);
 app.use('/messages', routes.message);
 

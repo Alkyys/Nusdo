@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
 
-const bcrypt = require('bcrypt-nodejs');
+const bcrypt = require('bcrypt');
 const validator = require('validator');
 const mongoosePaginate = require('mongoose-paginate-v2');
+
+let ObjectId = mongoose.Schema.Types.ObjectId;
 
 const UserSchema = new mongoose.Schema({
     username: {
@@ -69,7 +71,7 @@ const genSalt = (user, SALT_FACTOR, next) => {
 
 UserSchema.pre('save', function(next) {
     const that = this;
-    const SALT_FACTOR = 5;
+    const SALT_FACTOR = 10;
     if (!that.isModified('password')) {
         return next()
     }

@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+let ObjectId = mongoose.Schema.Types.ObjectId;
+
 const LeasingSchema = new mongoose.Schema({
     user_id:{
         type:ObjectId,
@@ -23,5 +25,5 @@ const LeasingSchema = new mongoose.Schema({
     }
 });
 
-LeasingSchema.plugin(mongoosePaginate);
-module.exports = mongoose.model('ModelLeasing', LeasingSchema);
+// LeasingSchema.plugin(mongoosePaginate);
+module.exports = mongoose.model('lesings', LeasingSchema);

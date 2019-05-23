@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+let ObjectId = mongoose.Schema.Types.ObjectId;
+
 const CarSchema = new mongoose.Schema({
     ownerid_id: ObjectId,
     available: {
@@ -53,5 +55,5 @@ const CarSchema = new mongoose.Schema({
     }
 });
 
-CarSchema.plugin(mongoosePaginate);
-module.exports = mongoose.model('ModelCar', CarSchema);
+//CarSchema.plugin(mongoosePaginate);
+module.exports = mongoose.model('cars', CarSchema);

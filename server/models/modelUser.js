@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const bcrypt = require('bcrypt');
 const validator = require('validator');
-const mongoosePaginate = require('mongoose-paginate-v2');
+//const mongoosePaginate = require('mongoose-paginate-v2');
 
 let ObjectId = mongoose.Schema.Types.ObjectId;
 
@@ -69,14 +69,14 @@ const genSalt = (user, SALT_FACTOR, next) => {
     })
 };
 
-UserSchema.pre('save', function(next) {
-    const that = this;
-    const SALT_FACTOR = 10;
-    if (!that.isModified('password')) {
-        return next()
-    }
-    return genSalt(that, SALT_FACTOR, next)
-});
+// UserSchema.pre('save', function(next) {
+//     const that = this;
+//     const SALT_FACTOR = 10;
+//     if (!that.isModified('password')) {
+//         return next()
+//     }
+//     return genSalt(that, SALT_FACTOR, next)
+// });
 
 UserSchema.methods.comparePassword = function(passwordAttempt, cb) {
     bcrypt.compare(passwordAttempt, this.password, (err, isMatch) =>
@@ -84,16 +84,17 @@ UserSchema.methods.comparePassword = function(passwordAttempt, cb) {
     )
 };
 
-UserSchema.statics.findByLogin = async function (login) {
-    let user = await this.findOne({
-        username: login,
-    });
+// UserSchema.statics.findByLogin = async function (login) {
+//     let user = await this.findOne({
+//         username: login,
+//     });
+//
+//     if (!user) {
+//         user = await this.findOne({email: login});
+//     }
+//
+//     return user;
+// };
 
-    if (!user) {
-        user = await this.findOne({email: login});
-    }
-
-    return user;
-};
-UserSchema.plugin(mongoosePaginate);
-module.exports = mongoose.model('ModelUser', UserSchema);
+//UserSchema.plugin(mongoosePaginate);
+module.exports = mongoose.model('users', UserSchema);

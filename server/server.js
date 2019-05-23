@@ -12,13 +12,13 @@ const routeCars = require('./routes/routeCars');
 const routeLeasing = require('./routes/routeLeasing');
 const routeUser = require('./routes/routeUser');
 
-const User = require('./models/modelUser');
+//const User = require('./models/modelUser');
 
 mongoose.connect(process.env.URL_MONGOBD, {
     useCreateIndex: true,
     useNewUrlParser: true
 })
-    .then(() => console.log("DB : OK"))
+    .then(() => console.log("MongoDB is OK"))
     .catch(err => console.log(err));
 
 const app = express();
@@ -28,9 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 
-//app.use('/car', routeCars );
-//app.use('/leasing', routeLeasing );
-app.use('/user', routeUser);
+app.use('/', routeCars, routeUser, routeLeasing);
 
 // app.use((req, res, next) => {
 //     req.context = {
@@ -40,9 +38,8 @@ app.use('/user', routeUser);
 //     next();
 // });
 
-
 app.listen(process.env.PORT, () =>
-    console.log(`Example app listening on port ${process.env.PORT}!`),
+    console.log(`Server is running on: ${process.env.PORT}`),
 );
 
 module.exports = router;

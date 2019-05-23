@@ -1,27 +1,21 @@
-const express = require ('express');
+const express = require('express');
 const router = express.Router();
+const Car = require('./../models/modelCar');
 
-router.get('/', function(req, res, next) {
-    res.send(req.car);
-
+router.get('/car/all', function (req, res, next) {
+    Car.find()
+        .then((cars) => {
+            res.json(cars)
+        })
+        .catch((err) => next(err))
 });
 
-// route de bases test CRUD
-
-router.post('/user', (req, res) => {
-    return res.send('POST HTTP method on user resource');
-});
-
-router.put('/user/:userId', (req, res) => {
-    return res.send(
-        `PUT HTTP method on user/${req.params.userId} resource`,
-    );
-});
-
-router.delete('/user/:userId', (req, res) => {
-    return res.send(
-        `DELETE HTTP method on user/${req.params.userId} resource`,
-    );
+router.get('/car/:id', function (req, res, next) {
+    Car.findById({_id:req.params.id})
+        .then((cars) => {
+            res.json(cars)
+        })
+        .catch((err) => next(err))
 });
 
 module.exports = router;

@@ -26,4 +26,4 @@ const LeasingSchema = new mongoose.Schema({
 });
 
 // LeasingSchema.plugin(mongoosePaginate);
-module.exports = mongoose.model('lesings', LeasingSchema);
+module.exports = mongoose.model('leasings', LeasingSchema);

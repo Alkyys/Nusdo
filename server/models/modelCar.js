@@ -3,7 +3,10 @@ import mongoose from 'mongoose';
 let ObjectId = mongoose.Schema.Types.ObjectId;
 
 const CarSchema = new mongoose.Schema({
-    ownerid_id: ObjectId,
+    ownerid_id: {
+        type:ObjectId,
+        required: true
+    },
     available: {
         type: Boolean,
         required: true,
